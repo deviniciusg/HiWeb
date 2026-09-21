@@ -1,0 +1,218 @@
+/* Base Styles */
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #0A0E13;
+    color: #F8FAFC;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+::selection {
+  background-color: #00D2FF;
+  color: #0A0E13;
+}
+
+/* Tailwind Customizations via CSS for better readability */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all;
+  }
+  
+  .card-base {
+    @apply p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group;
+  }
+
+  .nav-link {
+    @apply hover:text-electric-cyan transition-colors;
+  }
+}
+
+  primary-container: '#00d2ff'
+  on-primary-container: '#00566a'
+  inverse-primary: '#00677f'
+  secondary: '#aec6ff'
+  on-secondary: '#002e6b'
+  secondary-container: '#508eff'
+  on-secondary-container: '#00275e'
+  tertiary: '#b8e3ff'
+  on-tertiary: '#00354a'
+  tertiary-container: '#6bccff'
+  on-tertiary-container: '#005575'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#b6ebff'
+  primary-fixed-dim: '#47d6ff'
+  on-primary-fixed: '#001f28'
+  on-primary-fixed-variant: '#004e60'
+  secondary-fixed: '#d8e2ff'
+  secondary-fixed-dim: '#aec6ff'
+  on-secondary-fixed: '#001a43'
+  on-secondary-fixed-variant: '#004397'
+  tertiary-fixed: '#c4e7ff'
+  tertiary-fixed-dim: '#7bd0ff'
+  on-tertiary-fixed: '#001e2c'
+  on-tertiary-fixed-variant: '#004c69'
+  background: '#101419'
+  on-background: '#e0e2ea'
+  surface-variant: '#31353b'
+  surface-root: '#0B0F14'
+  surface-subtle: '#101720'
+  surface-card: '#151F2C'
+  surface-border: '#1E293B'
+  electric-cyan: '#04D4FC'
+  royal-blue: '#2563EB'
+  text-primary: '#F8FAFC'
+  text-muted: '#94A3B8'
+typography:
+  display-xl:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 56px
+    fontWeight: '800'
+    lineHeight: 64px
+    letterSpacing: -0.03em
+  display-xl-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 36px
+    fontWeight: '800'
+    lineHeight: 44px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 32px
+    fontWeight: '700'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 24px
+    fontWeight: '700'
+    lineHeight: 32px
+    letterSpacing: -0.01em
+  title-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 18px
+    fontWeight: '600'
+    lineHeight: 26px
+    letterSpacing: -0.005em
+  body-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 26px
+  body-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+  label-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 13px
+    fontWeight: '600'
+    lineHeight: 18px
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 11px
+    fontWeight: '700'
+    lineHeight: 14px
+    letterSpacing: 0.06em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  gutter-mobile: 1rem
+  margin: 3rem
+  margin-mobile: 1.25rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system embodies high-stakes digital authority, precision, and technological forwardness. Synthesizing the refined poise of corporate engineering with the electric luminescence of cutting-edge creative consultancies, the aesthetic communicates speed, certainty, and institutional competence. 
+
+The visual language draws on a blend of **Sleek Minimalist Dark Mode** and **Precision Glassmorphism with Tonal Outlines**:
+- Surfaces prioritize deep void-level blacks and cold slate undertones, completely avoiding muddy warm grays.
+- Functional elements feature luminous, electric cyan and royal blue gradients—reminiscent of energized chevron motifs, laser alignment, and telemetric signals.
+- Spacing is rational and expansive, allowing typography to command focus without decorative distraction.
+- Contrast is engineered for instantaneous readability and high-conversion enterprise actions.
+
+## Colors
+
+The palette operates on a deliberate contrast between cold atmospheric shadows and coherent photonic light:
+
+- **Surface Foundations:** Grounded in `#0B0F14` (Deep Canvas) ascending to `#101720` (Elevated Layers) and `#151F2C` (Containers/Cards). Structural line work relies on `#1E293B` to define forms without visual clutter.
+- **Accents & Energizers:** Primary interactions harness `#00D2FF` (Electric Cyan) supported by `#0070F3` (Royal Blue) and `#38BDF8`. Linear gradients blending from `#00D2FF` down to `#0070F3` at 135° represent signature forward-moving elements (actions, key markers, and highlight rails).
+- **Legibility Rules:** Primary textual content uses pure luminous slate `#F8FAFC`, ensuring an AAA contrast ratio over base surfaces. Secondary and supporting details stay muted via `#94A3B8` to preserve clear optical hierarchy. Pure `#FFFFFF` is reserved strictly for high-impact display titles and focused state highlights.
+
+## Typography
+
+The type system standardizes on **Plus Jakarta Sans** across all levels, capturing an athletic, contemporary corporate geometry with tight tracking and balanced x-heights.
+
+- **Display & Headlines:** Set with aggressive negative tracking (`-0.03em` to `-0.01em`) and bold weights (`700` and `800`) to evoke a clean, confident executive presence. Large display sizes automatically drop to mobile-specific scale tokens on narrow viewports to eliminate unintentional wraps.
+- **Body:** Calibrated at `14px` and `16px` with generous line-height ratios (1.6x) for effortless scanning in dark modes, avoiding eye fatigue.
+- **Labels & Micro-data:** Micro badges, tags, and upper-tier metric headers utilize tight bold styling with positive tracking (`0.02em` to `0.06em`) for maximum legibility in compact, dense layouts.
+
+## Layout & Spacing
+
+The layout model is governed by an 8pt spatial grid configured into a 12-column fluid grid system bounded by a maximum width of `1280px`.
+
+- **Desktop (1024px+):** 12 columns with `1.5rem` (`24px`) gutters and a default outer margin of `3rem` (`48px`). High-impact sections leverage alternating single-card full spans and balanced 3-column feature arrays.
+- **Tablet (768px - 1023px):** 8 columns, gutters compress to `1rem` (`16px`), with margins scaling down to `2rem` (`32px`).
+- **Mobile (<768px):** 4 columns, collapsing nested grids into structured vertical stacks with `1rem` gutters and `1.25rem` screen margins.
+- **Rhythm:** Internal component spacing follows rigid proportional tokens (`space-xs` through `space-xl`) ensuring predictable visual weight across cards, inputs, and button sets.
+
+## Elevation & Depth
+
+Visual hierarchy does not use diffuse drop shadows in dark mode; instead, it relies on light emulation, subtle rim highlights, and controlled electric glows:
+
+- **Level 0 (Base Canvas):** Solid background (`#0B0F14`) without borders or ambient light.
+- **Level 1 (Structural Cards & Modules):** Backed by `#101720` or `#151F2C` with a crisp 1px border (`#1E293B`).
+- **Level 2 (Hover & Focused Surfaces):** Card borders dynamically illuminate to `#00D2FF` at 30% opacity, paired with an ambient cyan underglow: `box-shadow: 0 0 24px -4px rgba(0, 210, 255, 0.12)`.
+- **Level 3 (Modals & Overlays):** `#151F2C` surface reinforced with a 1px border (`rgba(56, 189, 248, 0.25)`), an 85% opacity backdrop blur (`backdrop-filter: blur(16px)`), and a deep directional drop shadow: `box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8)`.
+
+## Shapes
+
+The design uses a clean, architectural curvature level (`2`):
+- **Standard UI Elements (Buttons, Inputs, Badges):** Feature an 8px (`0.5rem`) corner radius, striking a balance between tech-forward sharpness and corporate accessibility.
+- **Containers & Cards:** Utilize a 16px (`1rem` / `rounded-lg`) radius to establish distinct, self-contained interactive zones.
+- **Modals & Hero Blocks:** Adopt a 24px (`1.5rem` / `rounded-xl`) outer boundary.
+- **Pill Exceptions:** High-conversion conversion chips, status tags, and avatar frames exclusively utilize fully rounded geometry (`9999px`) to stand out against structural rectangular cards.
+
+## Components
+
+### Buttons
+- **Primary (High-Conversion):** Styled with a 135° gradient from `#00D2FF` to `#0070F3`, white text (`#FFFFFF`), bold weight, and a soft cyan outer glow (`0 0 16px rgba(0, 210, 255, 0.3)`). Hover shifts gradient luminance and expands the glow radius to `24px`.
+- **Secondary (Corporate Outline):** `#101720` background with a 1px solid border (`#1E293B`), white text, transitioning to a pure cyan border (`#00D2FF`) with light text brighten on hover.
+- **Ghost:** Transparent background with `#94A3B8` text, shifting to `#00D2FF` on active focus.
+
+### Cards
+Constructed using `#151F2C` or semi-transparent `#101720` with a fine 1px border of `#1E293B`. Interactive variations feature subtle 200ms transition states where the border shifts to electric cyan accompanied by the subtle cyan underglow described in Elevation. Inner padding conforms to `space-lg` (`24px`).
+
+### Input Fields
+Dark inputs (`#0B0F14`) surrounded by `#1E293B` borders with a height of `48px` and `0.5rem` radius. Placeholder text rests in `#94A3B8`. On focus, the field activates with a 1px `#00D2FF` border and a faint 2px outer aura (`rgba(0, 210, 255, 0.15)`).
+
+### Chips & Badges
+Compact elements with a `9999px` radius, utilizing a 10% opacity tint of cyan (`rgba(0, 210, 255, 0.1)`) with a 1px border of `rgba(0, 210, 255, 0.3)` and electric cyan typography.
+
+### Checkboxes & Radios
+Base border `#1E293B` over `#101720`. Checked state smoothly fills with the primary cyan/blue gradient, displaying an ultra-crisp white check icon or center dot.
+
+### Specialized Component: Chevron Metric Rail
+Inspired by the brand's directional geometry, list markers and conversion indicators use an angular gradient chevron (`#00D2FF` to `#0070F3`) as an active bullet or progress track, driving the eye toward next steps.

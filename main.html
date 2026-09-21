@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>HiWeb Agency | Performance & Engenharia Digital</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link href="style.css" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-root": "#0A0E13",
+            "surface-subtle": "#101419",
+            "surface-card": "#141A22",
+            "surface-border": "#1E2734",
+            "electric-cyan": "#00D2FF",
+            "cyan-glow": "#38BDF8",
+            "royal-blue": "#0066FF",
+            "text-primary": "#F8FAFC",
+            "text-muted": "#94A3B8"
+          },
+          fontFamily: {
+            sans: ["Plus Jakarta Sans", "sans-serif"],
+            mono: ["Space Grotesk", "monospace"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="bg-surface-root text-text-primary antialiased">
+  <!-- ========================================== -->
+  <!-- 1. CABEÇALHO (Estilo Limpo )          -->
+  <!-- ========================================== -->
+  <header
+    class="fixed top-0 left-0 right-0 w-full z-50 bg-[#0A0E13]/90 backdrop-blur-md border-b border-surface-border/70 transition-all">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Logo HiWeb -->
+      <a class="flex items-center gap-3" href="#inicio">
+        <img alt="HiWeb Logo" class="h-9 sm:h-10 w-auto object-contain"src="assets/logo1x1.png">
+        <p class="text-xl font-bold">Hi<span class="text-[#00d3fc]">Web</span></p>
+      </a>
+
+      <!-- Navegação concisa -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-text-muted">
+        <a class="hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
+      </nav>
+
+      <!-- Botão Direto -->
+      <div class="flex items-center">
+        <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_15px_rgba(0,210,255,0.3)]"
+          href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20meu%20projeto."
+          rel="noopener noreferrer" target="_blank">
+          <span class="material-symbols-outlined text-base">chat</span>
+          <span>Vamos Conversar</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <main class="pt-20">
+    <!-- ========================================== -->
+    <!-- 2. HERO SECTION (Minimalista & Espaçosa)  -->
+    <!-- ========================================== -->
+    <section class="relative flex items-center justify-center py-20 md:py-28 px-6 overflow-hidden" id="inicio">
+      <!-- Glow sutil central -->
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-electric-cyan/10 rounded-full blur-[130px] pointer-events-none">
+      </div>
+
+      <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.15]">
+          Impulsione seu negócio com sua <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-[#0099ff]">presença
+            online</span>.
+        </h1>
+
+        <p class="mt-8 text-base sm:text-xl text-text-muted max-w-2xl font-light leading-relaxed">
+          Unimos engenharia de software de ponta, inteligência de tráfego e produção multimídia para transformar canais
+          digitais em ativos de alto faturamento.
+        </p>
+
+        <div class="mt-8">
+          <a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all" href="#contato">
+            Vamos Conversar
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- 3. SEÇÃO SOBRE NÓS (Editorial )       -->
+    <!-- ========================================== -->
+    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60" id="sobre">
+      <div class="max-w-4xl mx-auto px-6">
+        <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">SOBRE A
+          HIWEB</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mb-8">Engenharia digital focada
+          em tração e performance</h2>
+        <div class="space-y-6 text-base sm:text-lg text-text-muted leading-relaxed font-light">
+          <p class="">
+            A HiWeb nasceu para eliminar a distância entre tecnologia robusta e receita real. Desenvolvemos ecossistemas
+            sob medida onde cada linha de código, campanha de mídia e peça audiovisual trabalha com um único objetivo:
+            maximizar o retorno sobre seu investimento.
+          </p>
+          <p class="">
+            Combinamos visão analítica, automação estratégica e execução ágil para que empresas escalem sua operação
+            digital sem gargalos técnicos ou operacionais.
+          </p>
+        </div>
+        <!-- Citação de Destaque -->
+        <div class="my-10 pl-6 border-l-2 border-electric-cyan bg-surface-card/40 py-4 rounded-r-xl">
+          <blockquote class="text-lg sm:text-xl text-text-primary italic font-medium">“Transformar desafios tecnológicos
+            e comerciais em soluções digitais que convertem clientes e aceleram seu crescimento sustentável.”
+          </blockquote>
+        </div>
+        <div class="pt-2">
+          <a class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-electric-cyan/70 text-electric-cyan hover:bg-electric-cyan hover:text-surface-root font-semibold text-xs uppercase tracking-wider transition-all"
+            href="#contato">
+            Vamos Conversar
+            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- 4. SEÇÃO SERVIÇOS (6 Cards Diretos)        -->
+    <!-- ========================================== -->
+    <section class="py-20 sm:py-28 bg-surface-root border-t border-surface-border/60 relative overflow-hidden"
+      id="clientes">
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">CASES
+            &amp; PARCERIAS</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight">Clientes que já trabalharam
+            com a gente</h2>
+          <p class="mt-3 text-text-muted text-sm sm:text-base">Marcas e projetos atendidos com excelência técnica,
+            autoridade visual e foco em escala contínua.</p>
+        </div>
+        <div class="flex center gap-6">
+          <!-- Cliente 1: Artemax -->
+          <div
+            class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="h-20 w-full rounded-xl bg-surface-subtle/80 border border-surface-border/60 flex items-center justify-center p-4 mb-6 group-hover:border-electric-cyan/40 transition-colors">
+                <img alt="Artemax PCD &amp; K10"
+                  class="h-12 w-auto max-w-full object-contain filter drop-shadow-[0_0_8px_rgba(168,85,247,0.35)]"
+                  src="assets/logo_artemax.png">
+              </div>
+              <span class="text-[11px] font-mono text-electric-cyan uppercase tracking-wider block mb-1">Indústria &amp;
+                Engenharia</span>
+              <h3 class="text-lg font-bold text-text-primary mb-2">Artemax</h3>
+              <p class="text-xs text-text-muted leading-relaxed font-light mb-4">Ferramentas de usinagem em PCD e metal
+                duro. Estruturação de presença digital e catálogo industrial técnico.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors pt-3 border-t border-surface-border/60 tracking-wider"
+              href="https://artemax.net.br" rel="noopener noreferrer" target="_blank">
+              artemax.net.br
+              <span class="material-symbols-outlined text-sm">north_east</span>
+            </a>
+          </div>
+          
+          <!-- Cliente 2: Vanessa Moura -->
+          <div
+            class="p-6 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div class="h-20 w-full rounded-xl bg-[#1A1215] border border-surface-border/60 flex items-center justify-center px-4 py-2 mb-6 group-hover:border-electric-cyan/40 transition-colors">
+                <img alt="Vanessa Moura Psicóloga"
+                  class="h-12 w-auto max-w-full object-contain filter drop-shadow-[0_0_8px_rgba(255,0,210,0.35)]"
+                  src="assets/logo_psicologaemsinop.png">
+              </div>
+              <span class="text-[11px] font-mono text-electric-cyan uppercase tracking-wider block mb-1">Saúde &amp;
+                Bem-Estar</span>
+              <h3 class="text-lg font-bold text-text-primary mb-2">Vanessa Moura</h3>
+              <p class="text-xs text-text-muted leading-relaxed font-light mb-4">Psicologia clínica e saúde emocional em
+                Sinop. Landing page de alta conversão para agendamentos particulares.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors pt-3 border-t border-surface-border/60 tracking-wider"
+              href="https://psicologaemsinop.com" rel="noopener noreferrer" target="_blank">
+              psicologaemsinop.com
+              <span class="material-symbols-outlined text-sm">north_east</span>
+            </a>
+
+          </div>
+    </section>
+    <section class="py-24 sm:py-32 bg-surface-root border-t border-surface-border/60" id="servicos">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-16">
+          <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">NOSSAS
+            CAPACIDADES</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight">Serviços sob medida para o
+            seu próximo nível de escala</h2>
+          <p class="mt-3 text-text-muted text-base max-w-xl">Do tráfego qualificado à infraestrutura de alto desempenho,
+            tudo estruturado para maximizar conversões.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">trending_up</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Gestão de tráfego pago</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Aquisição estratégica e previsível no
+                Meta Ads e Google Ads. Segmentação orientada a dados, criativos validados e otimização contínua de CAC e
+                ROI.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Tr%C3%A1fego%20Pago."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Tráfego
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">code</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Desenvolvimento web</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Aplicações corporativas e portais de
+                alta velocidade construídos com arquitetura moderna, código limpo, máxima segurança e escalabilidade
+                garantida.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Desenvolvimento%20Web."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Web
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">web</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Criação de landing page</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Páginas ultra-otimizadas com
+                carregamento sub-segundo e copywriting persuasivo, projetadas especificamente para elevar suas taxas de
+                conversão.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Landing%20Pages."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Landing Pages
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">movie</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Edição de vídeo ou áudio</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Tratamento audiovisual com padrão
+                cinematográfico para podcasts, YouTube e reels com retenção magnética e narrativa orientada a autoridade
+                de marca.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Audiovisual."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Audiovisual
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">settings_suggest</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Manutenção e Otimização</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Auditoria contínua de performance
+                técnica, proteção contra vulnerabilidades, atualizações de infraestrutura e garantia de disponibilidade
+                total.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Otimiza%C3%A7%C3%A3o."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Otimização
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            <div>
+              <div
+                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                <span class="material-symbols-outlined text-2xl">view_in_ar</span>
+              </div>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Desenho em Solidworks</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Modelagem paramétrica 3D, engenharia
+                detalhada e renderizações técnicas industriais de alta precisão para prototipagem e manufatura.</p>
+            </div>
+            <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
+              href="https://wa.me/556194003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Solidworks."
+              rel="noopener noreferrer" target="_blank">
+              Falar sobre Solidworks
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- 5. CONTATO / ORÇAMENTO (Minimalista)       -->
+    <!-- ========================================== -->
+    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60" id="contato">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Informações de Contato Direto -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span
+                class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">Atendimento</span>
+              <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight">Pronto para acelerar seu
+                negócio?</h2>
+              <p class="mt-4 text-text-muted text-sm sm:text-base leading-relaxed font-light">Conte-nos sobre suas metas
+                atuais. Desenvolvemos um plano técnico e comercial sob medida para os seus objetivos.</p>
+            </div>
+            <div class="space-y-4 pt-4">
+              <a class="flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
+                href="https://wa.me/556194003108" rel="noopener noreferrer" target="_blank">
+                <span class="material-symbols-outlined text-2xl text-electric-cyan">chat</span>
+                <div>
+                  <span class="text-[11px] font-mono text-text-muted uppercase block">WhatsApp Comercial</span>
+                  <span
+                    class="text-sm font-bold text-text-primary group-hover:text-electric-cyan transition-colors">(61)
+                    99400-3108</span>
+                </div>
+              </a>
+
+              <a class="flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
+                href="https://www.linkedin.com/in/vinicius-gabriel-de-moura-b90bb8157" rel="noopener noreferrer"
+                target="_blank">
+                <span class="material-symbols-outlined text-2xl text-electric-cyan">link</span>
+                <div>
+                  <span class="text-[11px] font-mono text-text-muted uppercase block">LinkedIn</span>
+                  <span
+                    class="text-sm font-semibold text-text-primary group-hover:text-electric-cyan transition-colors">Vinicius
+                    Gabriel</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Formulário Estilo  -->
+          <div class="lg:col-span-7">
+            <div class="p-8 sm:p-10 rounded-2xl bg-surface-card border border-surface-border">
+              <h3 class="text-xl font-bold text-text-primary mb-2">Solicitar proposta personalizada</h3>
+              <p class="text-xs sm:text-sm text-text-muted mb-6">Preencha os dados abaixo e entraremos em contato direto
+                com uma análise do seu projeto.</p>
+              <form class="space-y-4"
+                onsubmit="event.preventDefault(); const n = document.getElementById('nome').value; const s = document.getElementById('servico').value; window.open('https://wa.me/556194003108?text=' + encodeURIComponent('Olá! Me chamo ' + n + ' e gostaria de conversar sobre o serviço: ' + s), '_blank');">
+                <div>
+                  <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
+                    for="nome">Nome completo / Empresa *</label>
+                  <input
+                    class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                    id="nome" placeholder="Ex.: Pedro Silva (Empresa Y)" required="" type="text">
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
+                      for="whatsapp">WhatsApp com DDD *</label>
+                    <input
+                      class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                      id="whatsapp" placeholder="(11) 99999-9999" required="" type="tel">
+                  </div>
+                  <div>
+                    <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
+                      for="email">E-mail *</label>
+                    <input
+                      class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                      id="email" placeholder="seuemail@empresa.com" required="" type="email">
+                  </div>
+                </div>
+                <div>
+                  <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
+                    for="servico">Serviço de interesse *</label>
+                  <select
+                    class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                    id="servico" required="">
+                    <option disabled="" selected="" value="">Selecione um serviço</option>
+                    <option value="Gestão de tráfego pago">Gestão de tráfego pago</option>
+                    <option value="Desenvolvimento web">Desenvolvimento web</option>
+                    <option value="Criação de landing page">Criação de landing page</option>
+                    <option value="Edição de material em vídeo ou audio">Edição de material em vídeo ou áudio</option>
+                    <option value="Manutenção e Otimização de sites">Manutenção e Otimização de sites</option>
+                    <option value="Desenho em Solidworks">Desenho em Solidworks</option>
+                    <option value="Outro">Outro</option>
+                  </select>
+                </div>
+                <div class="pt-3">
+                  <button
+                    class="w-full py-4 rounded-lg bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_4px_15px_rgba(0,210,255,0.3)]"
+                    type="submit">
+                    Iniciar Conversa
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ========================================== -->
+  <!-- 6. RODAPÉ (Ultra-limpo)              -->
+  <!-- ========================================== -->
+  <footer class="w-full bg-surface-root border-t border-surface-border/60 py-10">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <img alt="HiWeb Logo" class="h-8 w-auto object-contain"
+          src="assets/logo1x1.png">
+        <span class="text-xs text-text-muted font-mono">2026 © HiWeb. Todos os direitos reservados. | WhatsApp (61)
+          99400-3108</span>
+      </div>
+      <nav class="flex items-center gap-6 text-xs text-text-muted font-medium"><a
+          class="hover:text-electric-cyan transition-colors" href="#inicio">Início</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
+        <a class="hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
+      </nav>
+    </div>
+  </footer>
+
+
+</body>
+
+</html>
