@@ -146,7 +146,7 @@
       <!-- Glow decorativo sutil de fundo -->
       <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-electric-cyan/5 rounded-full blur-[140px] pointer-events-none"></div>
 
-      <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
         <!-- Cabeçalho da Seção -->
         <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
           <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">QUEM CONFIA NA HIWEB</span>
@@ -155,26 +155,62 @@
         </div>
 
         <!-- Grid de Cases no Desktop com Mockup Inteiro (Sem Cortes) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           
           <!-- CASE 1: Artemax -->
-          <article class="rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]">
+          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://artemax.net.br">
             <div>
-              <!-- Vitrine do Mockup (100% Visível) -->
-              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-5 sm:p-7 border-b border-surface-border/60">
+              <!-- Vitrine do Mockup Interativo -->
+              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
                 
                 <!-- Tag flutuante de categoria -->
-                <div class="absolute top-4 left-4 z-10">
+                <div class="absolute top-4 left-4 z-20">
                   <span class="px-3.5 py-1.5 rounded-full bg-surface-root/80 backdrop-blur-md border border-surface-border text-[11px] font-mono font-semibold text-electric-cyan uppercase tracking-wider shadow-sm">
                     Indústria & B2B
                   </span>
                 </div>
 
-                <!-- Imagem Completa do Monitor -->
-                <img 
-                  alt="Mockup do site Artemax exibido em monitor" 
-                  class="w-full h-full object-contain filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out group-hover:scale-[1.03]" 
-                  src="assets/artemax-display.webp">
+                <!-- Indicador de Status Interativo (Ao Vivo) -->
+                <div class="absolute top-4 right-4 z-20">
+                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
+                  </div>
+                </div>
+
+                <!-- Dica Flutuante Inferior de Scroll -->
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
+                    <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
+                    <span>Role para navegar</span>
+                  </div>
+                </div>
+
+                <!-- Botão Direto para o Site -->
+                <div class="absolute bottom-3 right-3 z-20">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                     href="https://artemax.net.br" rel="noopener noreferrer" target="_blank" title="Acessar o site artemax.net.br">
+                    <span>Ver Site</span>
+                    <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
+                  </a>
+                </div>
+
+                <!-- Palco do Mockup -->
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://artemax.net.br">
+                  <div class="simulator-scaler">
+                    <!-- Projeção 3D da tela do Monitor -->
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-artemax-net-br-2026-10-21-15_48_45.png" alt="Simulação do site Artemax">
+                      </div>
+                    </div>
+
+                    <!-- Carcaça do Monitor (Overlay) -->
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Artemax">
+                  </div>
+                </div>
               </div>
 
               <!-- Conteúdo Descritivo -->
@@ -211,23 +247,59 @@
           </article>
           
           <!-- CASE 2: Vanessa Moura -->
-          <article class="rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]">
+          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://psicologaemsinop.com">
             <div>
-              <!-- Vitrine do Mockup (100% Visível) -->
-              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-5 sm:p-7 border-b border-surface-border/60">
+              <!-- Vitrine do Mockup Interativo -->
+              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
                 
                 <!-- Tag flutuante de categoria -->
-                <div class="absolute top-4 left-4 z-10">
+                <div class="absolute top-4 left-4 z-20">
                   <span class="px-3.5 py-1.5 rounded-full bg-surface-root/80 backdrop-blur-md border border-surface-border text-[11px] font-mono font-semibold text-electric-cyan uppercase tracking-wider shadow-sm">
                     Saúde & Bem-Estar
                   </span>
                 </div>
 
-                <!-- Imagem Completa do Monitor -->
-                <img 
-                  alt="Mockup do site de Vanessa Moura em monitor" 
-                  class="w-full h-full object-contain filter drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out group-hover:scale-[1.03]" 
-                  src="assets/psicologa-em-sinop-display.webp">
+                <!-- Indicador de Status Interativo (Ao Vivo) -->
+                <div class="absolute top-4 right-4 z-20">
+                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
+                  </div>
+                </div>
+
+                <!-- Dica Flutuante Inferior de Scroll -->
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
+                    <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
+                    <span>Role para navegar</span>
+                  </div>
+                </div>
+
+                <!-- Botão Direto para o Site -->
+                <div class="absolute bottom-3 right-3 z-20">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                     href="https://psicologaemsinop.com" rel="noopener noreferrer" target="_blank" title="Acessar o site psicologaemsinop.com">
+                    <span>Ver Site</span>
+                    <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
+                  </a>
+                </div>
+
+                <!-- Palco do Mockup -->
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://psicologaemsinop.com">
+                  <div class="simulator-scaler">
+                    <!-- Projeção 3D da tela do Monitor -->
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-psicologaemsinop-2026-10-21-15_44_53.png" alt="Simulação do site de Vanessa Moura">
+                      </div>
+                    </div>
+
+                    <!-- Carcaça do Monitor (Overlay) -->
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura">
+                  </div>
+                </div>
               </div>
 
               <!-- Conteúdo Descritivo -->
@@ -258,6 +330,95 @@
               <a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-border/60 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors"
                 href="https://psicologaemsinop.com" rel="noopener noreferrer" target="_blank">
                 <span>psicologaemsinop.com</span>
+                <span class="material-symbols-outlined text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- CASE 3: AJA Amazônia -->
+          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://ajamazonia.org">
+            <div>
+              <!-- Vitrine do Mockup Interativo -->
+              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
+                
+                <!-- Tag flutuante de categoria -->
+                <div class="absolute top-4 left-4 z-20">
+                  <span class="px-3.5 py-1.5 rounded-full bg-surface-root/80 backdrop-blur-md border border-surface-border text-[11px] font-mono font-semibold text-electric-cyan uppercase tracking-wider shadow-sm">
+                    Institucional & ESG
+                  </span>
+                </div>
+
+                <!-- Indicador de Status Interativo (Ao Vivo) -->
+                <div class="absolute top-4 right-4 z-20">
+                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
+                  </div>
+                </div>
+
+                <!-- Dica Flutuante Inferior de Scroll -->
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
+                    <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
+                    <span>Role para navegar</span>
+                  </div>
+                </div>
+
+                <!-- Botão Direto para o Site -->
+                <div class="absolute bottom-3 right-3 z-20">
+                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                     href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank" title="Acessar o site ajamazonia.org">
+                    <span>Ver Site</span>
+                    <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
+                  </a>
+                </div>
+
+                <!-- Palco do Mockup -->
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org">
+                  <div class="simulator-scaler">
+                    <!-- Projeção 3D da tela do Monitor -->
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-ajamazonia-org-2026-10-21-15_48_04.png" alt="Simulação do site AJA Amazônia">
+                      </div>
+                    </div>
+
+                    <!-- Carcaça do Monitor (Overlay) -->
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup AJA Amazônia">
+                  </div>
+                </div>
+              </div>
+
+              <!-- Conteúdo Descritivo -->
+              <div class="p-6 sm:p-8">
+                <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">
+                  AJA — Articulação Justiça Amazônica
+                </h3>
+                <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
+                  Estruturação de portal internacional institucional voltado ao fortalecimento do Estado de Direito, governança socioambiental e combate ao desmatamento.
+                </p>
+
+                <!-- Destaques Rápidos -->
+                <div class="grid grid-cols-2 gap-3 pt-5 border-t border-surface-border/60">
+                  <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
+                    <span class="block text-[11px] font-mono text-text-muted uppercase">Entrega</span>
+                    <span class="text-xs font-semibold text-text-primary">Portal & Web</span>
+                  </div>
+                  <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
+                    <span class="block text-[11px] font-mono text-text-muted uppercase">Objetivo</span>
+                    <span class="text-xs font-semibold text-text-primary">Autoridade Global</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Rodapé do Card com Link -->
+            <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
+              <a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-border/60 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors"
+                href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank">
+                <span>ajamazonia.org</span>
                 <span class="material-symbols-outlined text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">north_east</span>
               </a>
             </div>
@@ -519,6 +680,212 @@
       </nav>
     </div>
   </footer>
+
+  <!-- ========================================== -->
+  <!-- SCRIPT: SIMULADOR DE SITE INTERATIVO       -->
+  <!-- ========================================== -->
+  <script>
+    (function () {
+      function initSiteSimulators() {
+        const cards = document.querySelectorAll('.simulator-card');
+        if (!cards.length) return;
+
+        cards.forEach((card) => {
+          const stage = card.querySelector('.simulator-stage');
+          const scaler = card.querySelector('.simulator-scaler');
+          const content = card.querySelector('.simulator-screen-content');
+          const img = card.querySelector('.simulator-screen-content img');
+          const progress = card.querySelector('.simulator-progress-line');
+          const statusText = card.querySelector('.simulator-status-text');
+          const pulseDot = card.querySelector('.simulator-pulse');
+
+          if (!stage || !scaler || !content || !img) return;
+
+          // 1. Responsividade pixel-perfect com escala dinâmica
+          function updateScale() {
+            const stageWidth = stage.clientWidth;
+            if (stageWidth > 0) {
+              const scale = stageWidth / 768;
+              scaler.style.transform = `scale(${scale})`;
+            }
+          }
+          window.addEventListener('resize', updateScale);
+          if (window.ResizeObserver) {
+            new ResizeObserver(updateScale).observe(stage);
+          }
+          updateScale();
+
+          // 2. Física e animação de rolagem suave (Lerp)
+          let currentY = 0;
+          let targetY = 0;
+          let maxScroll = 6000;
+          let isHovered = false;
+          let userInteracted = false;
+          let autoScrollSpeed = 6;
+          let resumeAutoTimer = null;
+          let isLooping = false;
+
+          function calcMaxScroll() {
+            if (img.naturalHeight && img.naturalHeight > 1200) {
+              maxScroll = img.naturalHeight - 1200;
+              autoScrollSpeed = Math.max(4.5, Math.min(8.5, maxScroll / 750));
+            }
+          }
+
+          if (img.complete && img.naturalHeight) {
+            calcMaxScroll();
+          } else {
+            img.addEventListener('load', calcMaxScroll);
+          }
+
+          // Loop de renderização 60fps/120fps via requestAnimationFrame
+          function tick() {
+            if (isHovered && !userInteracted && !isLooping) {
+              targetY += autoScrollSpeed;
+              if (targetY >= maxScroll) {
+                targetY = maxScroll;
+                isLooping = true;
+                setTimeout(() => {
+                  if (isHovered && !userInteracted) {
+                    targetY = 0;
+                    setTimeout(() => {
+                      isLooping = false;
+                    }, 800);
+                  } else {
+                    isLooping = false;
+                  }
+                }, 1800);
+              }
+            }
+
+            const diff = targetY - currentY;
+            currentY += diff * 0.12;
+
+            if (Math.abs(diff) < 0.1) {
+              currentY = targetY;
+            }
+
+            content.style.transform = `translate3d(0, ${-currentY}px, 0)`;
+
+            if (progress && maxScroll > 0) {
+              const pct = Math.min(100, Math.max(0, (currentY / maxScroll) * 100));
+              progress.style.width = pct + '%';
+            }
+
+            requestAnimationFrame(tick);
+          }
+          requestAnimationFrame(tick);
+
+          // 3. Hover: Inicia tour automático
+          card.addEventListener('mouseenter', () => {
+            isHovered = true;
+            userInteracted = false;
+            if (statusText) {
+              statusText.textContent = 'Simulação Ativa';
+              statusText.classList.add('text-electric-cyan');
+            }
+            if (pulseDot) {
+              pulseDot.classList.add('animate-ping');
+            }
+          });
+
+          card.addEventListener('mouseleave', () => {
+            isHovered = false;
+            userInteracted = false;
+            clearTimeout(resumeAutoTimer);
+            targetY = 0; // Retorna ao topo
+            if (statusText) {
+              statusText.textContent = 'Passe o mouse ou role';
+              statusText.classList.remove('text-electric-cyan');
+            }
+            if (pulseDot) {
+              pulseDot.classList.remove('animate-ping');
+            }
+          });
+
+          // 4. Rodinha do Mouse (Wheel): Controle manual com inércia
+          card.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            userInteracted = true;
+            targetY += e.deltaY * 3.2;
+            targetY = Math.max(0, Math.min(targetY, maxScroll));
+
+            if (statusText) {
+              statusText.textContent = 'Navegando...';
+            }
+
+            clearTimeout(resumeAutoTimer);
+            resumeAutoTimer = setTimeout(() => {
+              userInteracted = false;
+              if (isHovered && statusText) {
+                statusText.textContent = 'Simulação Ativa';
+              }
+            }, 2500);
+          }, { passive: false });
+
+          // 5. Toque / Mobile (Touch Swipe)
+          let touchStartY = 0;
+          let touchStartScroll = 0;
+
+          stage.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+              touchStartY = e.touches[0].clientY;
+              touchStartScroll = targetY;
+              userInteracted = true;
+              isHovered = true;
+            }
+          }, { passive: true });
+
+          stage.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1) {
+              const delta = touchStartY - e.touches[0].clientY;
+              targetY = Math.max(0, Math.min(touchStartScroll + delta * 6, maxScroll));
+            }
+          }, { passive: true });
+
+          stage.addEventListener('touchend', () => {
+            setTimeout(() => {
+              userInteracted = false;
+            }, 2000);
+          });
+
+          // 6. Clique no Mockup: Abre o site diretamente em nova aba
+          let isDragClick = false;
+          let startClickX = 0;
+          let startClickY = 0;
+
+          stage.addEventListener('mousedown', (e) => {
+            isDragClick = false;
+            startClickX = e.clientX;
+            startClickY = e.clientY;
+          });
+
+          stage.addEventListener('mouseup', (e) => {
+            const dist = Math.hypot(e.clientX - startClickX, e.clientY - startClickY);
+            if (dist > 8) {
+              isDragClick = true;
+            }
+          });
+
+          stage.addEventListener('click', (e) => {
+            if (e.target.closest('a')) return;
+            if (!isDragClick) {
+              const url = stage.getAttribute('data-target-url') || card.getAttribute('data-url');
+              if (url) {
+                window.open(url, '_blank', 'noopener,noreferrer');
+              }
+            }
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSiteSimulators);
+      } else {
+        initSiteSimulators();
+      }
+    })();
+  </script>
 </body>
 
 </html>

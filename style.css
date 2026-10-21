@@ -33,7 +33,93 @@
   }
 }
 
-  primary-container: '#00d2ff'
+/* ========================================== */
+/* SIMULADOR DE SITE INTERATIVO (HIWEB)       */
+/* ========================================== */
+.simulator-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 768 / 612;
+  background: #101419;
+  overflow: hidden;
+  cursor: ns-resize;
+  user-select: none;
+}
+
+.simulator-scaler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 768px;
+  height: 612px;
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.simulator-screen-projection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1200px;
+  transform-origin: 0 0;
+  transform: matrix3d(
+    0.338329, 0.054485, 0, 0.000102,
+    0.005299, 0.313124, 0, -0.000024,
+    0, 0, 1, 0,
+    119, 46, 0, 1
+  );
+  overflow: hidden;
+  background: #000000;
+  pointer-events: none;
+}
+
+.simulator-screen-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+}
+
+.simulator-screen-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.simulator-mockup-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 768px;
+  height: 612px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.simulator-progress-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #00D2FF, #0066FF);
+  box-shadow: 0 0 12px #00D2FF;
+  width: 0%;
+  z-index: 5;
+  transition: width 0.05s linear;
+}
+
+.simulator-glass-reflection {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Design Tokens Documentation */
+/*
   on-primary-container: '#00566a'
   inverse-primary: '#00677f'
   secondary: '#aec6ff'
@@ -216,3 +302,4 @@ Base border `#1E293B` over `#101720`. Checked state smoothly fills with the prim
 
 ### Specialized Component: Chevron Metric Rail
 Inspired by the brand's directional geometry, list markers and conversion indicators use an angular gradient chevron (`#00D2FF` to `#0070F3`) as an active bullet or progress track, driving the eye toward next steps.
+*/
