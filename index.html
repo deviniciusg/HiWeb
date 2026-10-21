@@ -17,94 +17,7 @@
     rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link href="style.css?v=2" rel="stylesheet">
-
-  <style>
-    /* ========================================== */
-    /* SIMULADOR DE SITE INTERATIVO (HIWEB)       */
-    /* ========================================== */
-    .simulator-stage {
-      position: relative !important;
-      width: 100% !important;
-      aspect-ratio: 768 / 612 !important;
-      background: #101419 !important;
-      overflow: hidden !important;
-      cursor: pointer !important;
-      user-select: none !important;
-    }
-
-    .simulator-scaler {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 768px !important;
-      height: 612px !important;
-      transform-origin: 0 0 !important;
-      will-change: transform !important;
-    }
-
-    .simulator-screen-projection {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 1920px !important;
-      height: 1200px !important;
-      transform-origin: 0 0 !important;
-      transform: matrix3d(
-        0.338329, 0.054485, 0, 0.000102,
-        0.005299, 0.313124, 0, -0.000024,
-        0, 0, 1, 0,
-        119, 46, 0, 1
-      ) !important;
-      overflow: hidden !important;
-      background: #000000 !important;
-      pointer-events: none !important;
-    }
-
-    .simulator-screen-content {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100% !important;
-      will-change: transform !important;
-    }
-
-    .simulator-screen-content img {
-      width: 100% !important;
-      height: auto !important;
-      display: block !important;
-    }
-
-    .simulator-mockup-frame {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 768px !important;
-      height: 612px !important;
-      pointer-events: none !important;
-      z-index: 20 !important;
-    }
-
-    .simulator-progress-line {
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      height: 6px !important;
-      background: linear-gradient(90deg, #00D2FF, #0066FF) !important;
-      box-shadow: 0 0 12px #00D2FF !important;
-      width: 0% !important;
-      z-index: 10 !important;
-      transition: width 0.05s linear !important;
-    }
-
-    .simulator-glass-reflection {
-      position: absolute !important;
-      inset: 0 !important;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%) !important;
-      pointer-events: none !important;
-      z-index: 5 !important;
-    }
-  </style>
+  <link href="style.css?v=3" rel="stylesheet">
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -134,30 +47,35 @@
   </script>
 </head>
 
-<body class="bg-surface-root text-text-primary antialiased">
+<body class="bg-surface-root text-text-primary antialiased relative">
+  <!-- ========================================== -->
+  <!-- BARRA DE PROGRESSO DE ROLAGEM              -->
+  <!-- ========================================== -->
+  <div id="scroll-progress-bar"></div>
+
   <!-- ========================================== -->
   <!-- 1. CABEÇALHO                              -->
   <!-- ========================================== -->
   <header
-    class="fixed top-0 left-0 right-0 w-full z-50 bg-[#0A0E13]/90 backdrop-blur-md border-b border-surface-border/70 transition-all">
+    class="site-header fixed top-0 left-0 right-0 w-full z-50 bg-[#0A0E13]/90 backdrop-blur-md border-b border-surface-border/70 transition-all">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- Logo HiWeb -->
-      <a class="flex items-center gap-3" href="#inicio">
-        <img alt="HiWeb Logo" class="h-9 sm:h-10 w-auto object-contain" src="assets/logo1x1.png">
-        <p class="text-xl font-bold">Hi<span class="text-[#00d3fc]">Web</span></p>
+      <a class="flex items-center gap-3 group" href="#inicio">
+        <img alt="HiWeb Logo" class="h-9 sm:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105" src="assets/logo1x1.png">
+        <p class="text-xl font-bold tracking-tight">Hi<span class="text-[#00d3fc]">Web</span></p>
       </a>
 
       <!-- Navegação concisa -->
       <nav class="hidden md:flex items-center gap-8 text-xs font-semibold uppercase tracking-wider text-text-muted">
-        <a class="hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
       </nav>
 
       <!-- Botão Direto -->
       <div class="flex items-center">
-        <a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_15px_rgba(0,210,255,0.3)]"
+        <a class="btn-shimmer inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_0_15px_rgba(0,210,255,0.3)] hover:shadow-[0_0_25px_rgba(0,210,255,0.6)] hover:scale-105"
           href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20meu%20projeto."
           rel="noopener noreferrer" target="_blank">
           <span class="material-symbols-outlined text-base">chat</span>
@@ -171,26 +89,37 @@
     <!-- ========================================== -->
     <!-- 2. HERO SECTION                           -->
     <!-- ========================================== -->
-    <section class="relative flex items-center justify-center py-20 md:py-28 px-6 overflow-hidden" id="inicio">
-      <div
-        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-electric-cyan/10 rounded-full blur-[130px] pointer-events-none">
-      </div>
+    <section class="relative flex items-center justify-center py-24 md:py-32 px-6 overflow-hidden" id="inicio">
+      <!-- Orbs de fundo com animação fluida -->
+      <div class="ambient-glow-orb-1 top-1/2 left-1/2"></div>
+      <div class="ambient-glow-orb-2 top-1/3 left-1/3"></div>
+      <div class="absolute inset-0 bg-tech-grid pointer-events-none"></div>
 
       <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.15]">
-          Impulsione seu negócio com uma <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-electric-cyan to-[#0099ff]">presença digital
-            forte</span>.
+        <!-- Tag / Pill com radar ativo -->
+        <div class="reveal-on-scroll mb-6">
+          <div class="hero-badge">
+            <span class="radar-beacon w-2 h-2 rounded-full bg-electric-cyan"></span>
+            <span class="text-xs font-mono font-semibold tracking-wider text-electric-cyan uppercase">Tecnologia &amp; Estratégia de Crescimento</span>
+          </div>
+        </div>
+
+        <h1 class="reveal-on-scroll reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.15]">
+          Impulsione seu negócio com uma <span class="animated-gradient-text">presença digital forte</span>.
         </h1>
 
-        <p class="mt-8 text-base sm:text-xl text-text-muted max-w-2xl font-light leading-relaxed">
+        <p class="reveal-on-scroll reveal-delay-2 mt-8 text-base sm:text-xl text-text-muted max-w-2xl font-light leading-relaxed">
           Criamos sites modernos e anúncios estratégicos que colocam sua empresa na frente das pessoas certas — transformando visitas na internet em clientes reais para você.
         </p>
 
-        <div class="mt-8">
-          <a class="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all" href="#contato">
-            Quero Alavancar Meu Negócio
-            <span class="material-symbols-outlined text-base">arrow_forward</span>
+        <div class="reveal-on-scroll reveal-delay-3 mt-10 flex flex-col sm:flex-row items-center gap-4">
+          <a class="btn-shimmer btn-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all group" href="#contato">
+            <span>Quero Alavancar Meu Negócio</span>
+            <span class="material-symbols-outlined text-base transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-surface-border bg-surface-card/60 backdrop-blur text-text-primary hover:border-electric-cyan/70 hover:text-electric-cyan font-semibold text-sm tracking-wider uppercase transition-all hover:scale-105" href="#clientes">
+            <span class="material-symbols-outlined text-base">visibility</span>
+            <span>Ver Projetos Reais</span>
           </a>
         </div>
       </div>
@@ -199,11 +128,11 @@
     <!-- ========================================== -->
     <!-- 3. SEÇÃO SOBRE NÓS                        -->
     <!-- ========================================== -->
-    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60" id="sobre">
-      <div class="max-w-4xl mx-auto px-6">
-        <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">SOBRE A HIWEB</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mb-8">Mais que um site: uma máquina de atração de clientes</h2>
-        <div class="space-y-6 text-base sm:text-lg text-text-muted leading-relaxed font-light">
+    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60 relative overflow-hidden" id="sobre">
+      <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <span class="reveal-on-scroll text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">SOBRE A HIWEB</span>
+        <h2 class="reveal-on-scroll reveal-delay-1 text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mb-8">Mais que um site: uma máquina de atração de clientes</h2>
+        <div class="reveal-on-scroll reveal-delay-2 space-y-6 text-base sm:text-lg text-text-muted leading-relaxed font-light">
           <p>
             Ter apenas um site bonito não basta. Para uma empresa crescer no digital, ela precisa ser facilmente encontrada por quem tem interesse real em comprar e oferecer uma experiência rápida e convincente.
           </p>
@@ -213,29 +142,30 @@
         </div>
         
         <!-- Destaque -->
-        <div class="my-10 pl-6 border-l-2 border-electric-cyan bg-surface-card/40 py-4 rounded-r-xl">
+        <div class="reveal-on-scroll reveal-delay-3 quote-highlight my-10 pl-6 border-l-2 border-electric-cyan bg-surface-card/40 py-4 rounded-r-xl">
           <blockquote class="text-lg sm:text-xl text-text-primary italic font-medium">“Nossa missão é fazer sua marca ser vista com autoridade e transformar a internet no principal canal de vendas da sua empresa.”
           </blockquote>
         </div>
-        <div class="pt-2">
-          <a class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-electric-cyan/70 text-electric-cyan hover:bg-electric-cyan hover:text-surface-root font-semibold text-xs uppercase tracking-wider transition-all"
+        <div class="reveal-on-scroll reveal-delay-4 pt-2">
+          <a class="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-electric-cyan/70 text-electric-cyan hover:bg-electric-cyan hover:text-surface-root font-semibold text-xs uppercase tracking-wider transition-all group"
             href="#contato">
-            Fale com um Especialista
-            <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            <span>Fale com um Especialista</span>
+            <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
           </a>
         </div>
       </div>
     </section>
-<!-- ========================================== -->
+
+    <!-- ========================================== -->
     <!-- 4. SEÇÃO CLIENTES & CASES                  -->
     <!-- ========================================== -->
     <section class="py-24 sm:py-32 bg-surface-root border-t border-surface-border/60 relative overflow-hidden" id="clientes">
       <!-- Glow decorativo sutil de fundo -->
-      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-electric-cyan/5 rounded-full blur-[140px] pointer-events-none"></div>
+      <div class="ambient-glow-orb-2 top-1/2 left-1/2 pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto px-6 relative z-10">
         <!-- Cabeçalho da Seção -->
-        <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div class="text-center max-w-3xl mx-auto mb-16 sm:mb-20 reveal-on-scroll">
           <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">QUEM CONFIA NA HIWEB</span>
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary tracking-tight">Projetos reais, resultados concretos</h2>
           <p class="mt-4 text-text-muted text-base sm:text-lg font-light leading-relaxed">Empresas e profissionais que confiaram na HiWeb para fortalecer sua autoridade online e gerar novas oportunidades de vendas.</p>
@@ -245,7 +175,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           
           <!-- CASE 1: Artemax -->
-          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://artemax.net.br">
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-1" data-url="https://artemax.net.br">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -260,13 +190,13 @@
                 <!-- Indicador de Status Interativo (Ao Vivo) -->
                 <div class="absolute top-4 right-4 z-20">
                   <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan radar-beacon simulator-pulse"></span>
                     <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
                   </div>
                 </div>
 
                 <!-- Dica Flutuante Inferior de Scroll -->
-                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
                     <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
                     <span>Role para navegar</span>
@@ -275,7 +205,7 @@
 
                 <!-- Botão Direto para o Site -->
                 <div class="absolute bottom-3 right-3 z-20">
-                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                  <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
                      href="https://artemax.net.br" rel="noopener noreferrer" target="_blank" title="Acessar o site artemax.net.br">
                     <span>Ver Site</span>
                     <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
@@ -283,19 +213,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://artemax.net.br" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
-                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://artemax.net.br">
+                  <div class="simulator-scaler">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
-                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
-                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
-                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
-                        <img src="assets/screencapture-artemax-net-br-2026-10-21-15_48_45.png" alt="Simulação do site Artemax" style="width: 100%; height: auto; display: block;">
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-artemax-net-br-2026-10-21-15_48_45.png" alt="Simulação do site Artemax">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Artemax" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Artemax">
                   </div>
                 </div>
               </div>
@@ -334,7 +264,7 @@
           </article>
           
           <!-- CASE 2: Vanessa Moura -->
-          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://psicologaemsinop.com">
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-2" data-url="https://psicologaemsinop.com">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -349,13 +279,13 @@
                 <!-- Indicador de Status Interativo (Ao Vivo) -->
                 <div class="absolute top-4 right-4 z-20">
                   <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan radar-beacon simulator-pulse"></span>
                     <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
                   </div>
                 </div>
 
                 <!-- Dica Flutuante Inferior de Scroll -->
-                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
                     <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
                     <span>Role para navegar</span>
@@ -364,7 +294,7 @@
 
                 <!-- Botão Direto para o Site -->
                 <div class="absolute bottom-3 right-3 z-20">
-                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                  <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
                      href="https://psicologaemsinop.com" rel="noopener noreferrer" target="_blank" title="Acessar o site psicologaemsinop.com">
                     <span>Ver Site</span>
                     <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
@@ -372,19 +302,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://psicologaemsinop.com" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
-                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://psicologaemsinop.com">
+                  <div class="simulator-scaler">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
-                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
-                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
-                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
-                        <img src="assets/screencapture-psicologaemsinop-2026-10-21-15_44_53.png" alt="Simulação do site de Vanessa Moura" style="width: 100%; height: auto; display: block;">
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-psicologaemsinop-2026-10-21-15_44_53.png" alt="Simulação do site de Vanessa Moura">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura">
                   </div>
                 </div>
               </div>
@@ -423,7 +353,7 @@
           </article>
 
           <!-- CASE 3: AJA - Aliança Jurídica pela Amazônia -->
-          <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://ajamazonia.org">
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-3" data-url="https://ajamazonia.org">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -438,13 +368,13 @@
                 <!-- Indicador de Status Interativo (Ao Vivo) -->
                 <div class="absolute top-4 right-4 z-20">
                   <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-electric-cyan transition-all simulator-pulse"></span>
+                    <span class="w-2 h-2 rounded-full bg-electric-cyan radar-beacon simulator-pulse"></span>
                     <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
                   </div>
                 </div>
 
                 <!-- Dica Flutuante Inferior de Scroll -->
-                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity">
+                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
                     <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
                     <span>Role para navegar</span>
@@ -453,7 +383,7 @@
 
                 <!-- Botão Direto para o Site -->
                 <div class="absolute bottom-3 right-3 z-20">
-                  <a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                  <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
                      href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank" title="Acessar o site ajamazonia.org">
                     <span>Ver Site</span>
                     <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
@@ -461,19 +391,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
-                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org">
+                  <div class="simulator-scaler">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
-                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
-                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
-                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
-                        <img src="assets/screencapture-ajamazonia-org-2026-10-21-15_48_04.png" alt="Simulação do site Aliança Jurídica pela Amazônia" style="width: 100%; height: auto; display: block;">
+                    <div class="simulator-screen-projection">
+                      <div class="simulator-progress-line"></div>
+                      <div class="simulator-glass-reflection"></div>
+                      <div class="simulator-screen-content">
+                        <img src="assets/screencapture-ajamazonia-org-2026-10-21-15_48_04.png" alt="Simulação do site Aliança Jurídica pela Amazônia">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Aliança Jurídica pela Amazônia" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Aliança Jurídica pela Amazônia">
                   </div>
                 </div>
               </div>
@@ -512,10 +442,6 @@
           </article>
 
         </div>
-          
-
-
-        </div>
       </div>
     </section>
 
@@ -524,7 +450,7 @@
     <!-- ========================================== -->
     <section class="py-24 sm:py-32 bg-surface-root border-t border-surface-border/60" id="servicos">
       <div class="max-w-6xl mx-auto px-6">
-        <div class="mb-16">
+        <div class="mb-16 reveal-on-scroll">
           <span class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">COMO PODEMOS AJUDAR</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight">Soluções pensadas para fazer seu negócio faturar mais</h2>
           <p class="mt-3 text-text-muted text-base max-w-xl">Do anúncio certo ao site profissional que passa total credibilidade: cuidamos da presença digital da sua empresa de ponta a ponta.</p>
@@ -533,115 +459,115 @@
           
           <!-- Card 1: Tráfego Pago -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-1 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">trending_up</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Gestão de Tráfego Pago</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Gestão de Tráfego Pago</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Anúncios no Google, Instagram e Facebook que encontram clientes que já procuram pelo que você vende, aumentando contatos diários no seu comercial.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Tr%C3%A1fego%20Pago."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Tráfego
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Tráfego</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
 
           <!-- Card 2: Otimização Google Maps / Google Meu Negócio -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-2 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">pin_drop</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Otimização de Perfil no Google Maps (Google Meu Negócio)</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Otimização de Perfil no Google Maps (Google Meu Negócio)</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Mais ligações, mensagens e clientes na sua porta. Deixamos seu perfil no Google Maps 100% completo, profissional e bem posicionado para sua empresa ser a primeira escolha de quem busca pelo seu serviço na região.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Google%20Meu%20Neg%C3%B3cio."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Google Maps
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Google Maps</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
 
           <!-- Card 3: Landing Pages -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-3 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">web</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Páginas de Vendas (Landing Pages)</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Páginas de Vendas (Landing Pages)</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Páginas de alta conversão criadas exclusivamente para campanhas de anúncios: diretas ao ponto e estruturadas para transformar visitantes em mensagens de orçamento.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Landing%20Pages."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Landing Pages
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Landing Pages</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
 
           <!-- Card 4: Produção e Edição Audiovisual -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-4 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">movie</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Vídeos para Redes e Anúncios</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Vídeos para Redes e Anúncios</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Edição dinâmica de vídeos para Instagram (Reels), TikTok e YouTube, feita para prender a atenção do público e valorizar seus produtos ou serviços.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Audiovisual."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Vídeos
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Vídeos</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
 
           <!-- Card 5: Manutenção e Suporte -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-5 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">settings_suggest</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Manutenção e Segurança</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Manutenção e Segurança</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Acompanhamento contínuo para manter seu site sempre no ar, protegido contra vírus, com carregamento rápido e pronto para receber visitas.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Otimiza%C3%A7%C3%A3o."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Suporte
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Suporte</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
 
           <!-- Card 6: Desenvolvimento Web -->
           <div
-            class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
+            class="spotlight-card reveal-on-scroll reveal-delay-6 p-8 rounded-2xl bg-surface-card border border-surface-border flex flex-col justify-between group">
             <div>
               <div
-                class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
+                class="service-icon-box w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
                 <span class="material-symbols-outlined text-2xl">code</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Desenvolvimento Web</h3>
+              <h3 class="text-xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">Desenvolvimento Web</h3>
               <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Sites institucionais e sistemas personalizados, rápidos e 100% adaptados para celulares, transmitindo autoridade e seriedade para a sua marca.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
               href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Desenvolvimento%20Web."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Criação de Sites
-              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              <span>Falar sobre Criação de Sites</span>
+              <span class="material-symbols-outlined text-sm animated-arrow">arrow_forward</span>
             </a>
           </div>
         </div>
@@ -651,11 +577,11 @@
     <!-- ========================================== -->
     <!-- 6. CONTATO / ORÇAMENTO                    -->
     <!-- ========================================== -->
-    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60" id="contato">
-      <div class="max-w-5xl mx-auto px-6">
+    <section class="py-24 sm:py-32 bg-surface-subtle border-t border-surface-border/60 relative overflow-hidden" id="contato">
+      <div class="max-w-5xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
           <!-- Informações de Contato Direto -->
-          <div class="lg:col-span-5 space-y-6">
+          <div class="lg:col-span-5 space-y-6 reveal-on-scroll reveal-left">
             <div>
               <span
                 class="text-xs font-mono font-semibold tracking-widest text-electric-cyan uppercase block mb-3">ATENDIMENTO</span>
@@ -663,9 +589,9 @@
               <p class="mt-4 text-text-muted text-sm sm:text-base leading-relaxed font-light">Conte-nos sobre o seu momento atual. Vamos analisar seu negócio e propor a estratégia ideal para você atrair mais clientes na internet.</p>
             </div>
             <div class="space-y-4 pt-4">
-              <a class="flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
+              <a class="spotlight-card flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
                 href="https://wa.me/5561994003108" rel="noopener noreferrer" target="_blank">
-                <span class="material-symbols-outlined text-2xl text-electric-cyan">chat</span>
+                <span class="material-symbols-outlined text-2xl text-electric-cyan transition-transform group-hover:scale-110">chat</span>
                 <div>
                   <span class="text-[11px] font-mono text-text-muted uppercase block">WhatsApp Comercial</span>
                   <span
@@ -674,10 +600,10 @@
                 </div>
               </a>
 
-              <a class="flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
+              <a class="spotlight-card flex items-center gap-4 p-4 rounded-xl bg-surface-card border border-surface-border hover:border-electric-cyan transition-colors group"
                 href="https://www.linkedin.com/in/deviniciusg/" rel="noopener noreferrer"
                 target="_blank">
-                <span class="material-symbols-outlined text-2xl text-electric-cyan">link</span>
+                <span class="material-symbols-outlined text-2xl text-electric-cyan transition-transform group-hover:scale-110">link</span>
                 <div>
                   <span class="text-[11px] font-mono text-text-muted uppercase block">LinkedIn</span>
                   <span
@@ -688,7 +614,7 @@
           </div>
 
           <!-- Formulário -->
-          <div class="lg:col-span-7">
+          <div class="lg:col-span-7 reveal-on-scroll reveal-right">
             <div class="p-8 sm:p-10 rounded-2xl bg-surface-card border border-surface-border">
               <h3 class="text-xl font-bold text-text-primary mb-2">Solicitar contato</h3>
               <p class="text-xs sm:text-sm text-text-muted mb-6">Preencha os campos abaixo para conversar diretamente conosco sobre o seu projeto.</p>
@@ -698,7 +624,7 @@
                   <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
                     for="nome">Seu Nome ou Empresa *</label>
                   <input
-                    class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                    class="form-input-animated w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
                     id="nome" placeholder="Ex.: Pedro Silva (Empresa Y)" required="" type="text">
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -706,14 +632,14 @@
                     <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
                       for="whatsapp">WhatsApp com DDD *</label>
                     <input
-                      class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                      class="form-input-animated w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
                       id="whatsapp" placeholder="(61) 99999-9999" required="" type="tel">
                   </div>
                   <div>
                     <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
                       for="email">E-mail *</label>
                     <input
-                      class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                      class="form-input-animated w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
                       id="email" placeholder="seuemail@empresa.com" required="" type="email">
                   </div>
                 </div>
@@ -721,7 +647,7 @@
                   <label class="block text-xs font-semibold text-text-muted uppercase tracking-wider mb-2"
                     for="servico">Serviço de interesse *</label>
                   <select
-                    class="w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
+                    class="form-input-animated w-full px-4 py-3 rounded-lg bg-surface-root border border-surface-border text-text-primary text-sm focus:border-electric-cyan focus:outline-none transition-colors"
                     id="servico" required="">
                     <option disabled="" selected="" value="">Selecione o serviço principal</option>
                     <option value="Gestão de tráfego pago">Gestão de tráfego pago (Anúncios online)</option>
@@ -735,7 +661,7 @@
                 </div>
                 <div class="pt-3">
                   <button
-                    class="w-full py-4 rounded-lg bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white transition-all shadow-[0_4px_15px_rgba(0,210,255,0.3)]"
+                    class="btn-shimmer btn-pulse-glow w-full py-4 rounded-lg bg-electric-cyan text-surface-root font-bold text-xs uppercase tracking-wider hover:bg-white hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_4px_15px_rgba(0,210,255,0.3)] hover:shadow-[0_4px_25px_rgba(0,210,255,0.6)]"
                     type="submit">
                     Solicitar Análise Gratuita
                   </button>
@@ -751,7 +677,7 @@
   <!-- ========================================== -->
   <!-- 7. RODAPÉ                                 -->
   <!-- ========================================== -->
-  <footer class="w-full bg-surface-root border-t border-surface-border/60 py-10">
+  <footer class="w-full bg-surface-root border-t border-surface-border/60 py-10 reveal-on-scroll">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-4">
         <img alt="HiWeb Logo" class="h-8 w-auto object-contain"
@@ -759,20 +685,99 @@
         <span class="text-xs text-text-muted font-mono">© HiWeb. Todos os direitos reservados. | WhatsApp (61) 99400-3108</span>
       </div>
       <nav class="flex items-center gap-6 text-xs text-text-muted font-medium">
-        <a class="hover:text-electric-cyan transition-colors" href="#inicio">Início</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
-        <a class="hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#inicio">Início</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#sobre">Sobre Nós</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#clientes">Clientes</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#servicos">Serviços</a>
+        <a class="nav-link-animated hover:text-electric-cyan transition-colors" href="#contato">Contato</a>
       </nav>
     </div>
   </footer>
 
   <!-- ========================================== -->
-  <!-- SCRIPT: SIMULADOR DE SITE INTERATIVO       -->
+  <!-- BOTÃO FLUTUANTE DO WHATSAPP               -->
+  <!-- ========================================== -->
+  <a class="floating-whatsapp" href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20conversar%20sobre%20meu%20projeto." id="floating-whatsapp" rel="noopener noreferrer" target="_blank" title="Falar no WhatsApp">
+    <span class="floating-whatsapp-radar"></span>
+    <span class="material-symbols-outlined text-xl">chat</span>
+    <span>WhatsApp Rápido</span>
+  </a>
+
+  <!-- ========================================== -->
+  <!-- SCRIPTS: INTERATIVIDADE & ANIMAÇÕES        -->
   <!-- ========================================== -->
   <script>
     (function () {
+      // 1. Barra de Progresso de Rolagem & Cabeçalho Dinâmico & Botão Flutuante
+      const progressBar = document.getElementById('scroll-progress-bar');
+      const header = document.querySelector('.site-header');
+      const floatingWa = document.getElementById('floating-whatsapp');
+
+      function handleScroll() {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        
+        // Progresso
+        if (progressBar && docHeight > 0) {
+          const progressPercent = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+          progressBar.style.width = progressPercent + '%';
+        }
+
+        // Header scrolled
+        if (header) {
+          if (scrollTop > 30) {
+            header.classList.add('scrolled');
+          } else {
+            header.classList.remove('scrolled');
+          }
+        }
+
+        // WhatsApp Flutuante
+        if (floatingWa) {
+          if (scrollTop > 220) {
+            floatingWa.classList.add('is-visible');
+          } else {
+            floatingWa.classList.remove('is-visible');
+          }
+        }
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+      handleScroll();
+
+      // 2. Sistema de Revelação ao Rolar (Scroll Reveal via IntersectionObserver)
+      const revealItems = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealItems.forEach(item => revealObserver.observe(item));
+      } else {
+        revealItems.forEach(item => item.classList.add('is-revealed'));
+      }
+
+      // 3. Efeito Spotlight nos Cards (Glow que segue a posição do cursor)
+      const spotlightCards = document.querySelectorAll('.spotlight-card');
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // 4. Inicializador do Simulador Interativo
       function initSiteSimulators() {
         const cards = document.querySelectorAll('.simulator-card');
         if (!cards.length) return;
@@ -788,7 +793,7 @@
 
           if (!stage || !scaler || !content || !img) return;
 
-          // 1. Responsividade pixel-perfect com escala dinâmica
+          // Responsividade pixel-perfect com escala dinâmica
           function updateScale() {
             const stageWidth = stage.clientWidth;
             if (stageWidth > 0) {
@@ -803,7 +808,7 @@
           }
           updateScale();
 
-          // 2. Física e animação de rolagem suave (Lerp)
+          // Física e animação de rolagem suave (Lerp)
           let currentY = 0;
           let targetY = 0;
           let maxScroll = 6000;
@@ -829,7 +834,6 @@
 
           // Loop de renderização 60fps/120fps via requestAnimationFrame
           function tick() {
-            // Garante que a escala esteja sempre ativa
             if (!scaler.style.transform && stage.clientWidth > 0) {
               updateScale();
             }
@@ -870,7 +874,7 @@
           }
           requestAnimationFrame(tick);
 
-          // 3. Hover: Inicia tour automático
+          // Hover: Inicia tour automático
           card.addEventListener('mouseenter', () => {
             isHovered = true;
             userInteracted = false;
@@ -887,7 +891,7 @@
             isHovered = false;
             userInteracted = false;
             clearTimeout(resumeAutoTimer);
-            targetY = 0; // Retorna ao topo
+            targetY = 0;
             if (statusText) {
               statusText.textContent = 'Passe o mouse ou role';
               statusText.classList.remove('text-electric-cyan');
@@ -897,7 +901,7 @@
             }
           });
 
-          // 4. Rodinha do Mouse (Wheel): Controle manual com inércia
+          // Rodinha do Mouse (Wheel)
           card.addEventListener('wheel', (e) => {
             e.preventDefault();
             userInteracted = true;
@@ -917,7 +921,7 @@
             }, 2500);
           }, { passive: false });
 
-          // 5. Toque / Mobile (Touch Swipe)
+          // Toque / Mobile (Touch Swipe)
           let touchStartY = 0;
           let touchStartScroll = 0;
 
@@ -943,7 +947,7 @@
             }, 2000);
           });
 
-          // 6. Clique no Mockup: Abre o site diretamente em nova aba
+          // Clique no Mockup: Abre o site diretamente em nova aba
           let isDragClick = false;
           let startClickX = 0;
           let startClickY = 0;
