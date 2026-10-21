@@ -17,7 +17,94 @@
     rel="stylesheet">
 
   <!-- Stylesheets -->
-  <link href="style.css" rel="stylesheet">
+  <link href="style.css?v=2" rel="stylesheet">
+
+  <style>
+    /* ========================================== */
+    /* SIMULADOR DE SITE INTERATIVO (HIWEB)       */
+    /* ========================================== */
+    .simulator-stage {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: 768 / 612 !important;
+      background: #101419 !important;
+      overflow: hidden !important;
+      cursor: pointer !important;
+      user-select: none !important;
+    }
+
+    .simulator-scaler {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 768px !important;
+      height: 612px !important;
+      transform-origin: 0 0 !important;
+      will-change: transform !important;
+    }
+
+    .simulator-screen-projection {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 1920px !important;
+      height: 1200px !important;
+      transform-origin: 0 0 !important;
+      transform: matrix3d(
+        0.338329, 0.054485, 0, 0.000102,
+        0.005299, 0.313124, 0, -0.000024,
+        0, 0, 1, 0,
+        119, 46, 0, 1
+      ) !important;
+      overflow: hidden !important;
+      background: #000000 !important;
+      pointer-events: none !important;
+    }
+
+    .simulator-screen-content {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100% !important;
+      will-change: transform !important;
+    }
+
+    .simulator-screen-content img {
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    .simulator-mockup-frame {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 768px !important;
+      height: 612px !important;
+      pointer-events: none !important;
+      z-index: 20 !important;
+    }
+
+    .simulator-progress-line {
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      height: 6px !important;
+      background: linear-gradient(90deg, #00D2FF, #0066FF) !important;
+      box-shadow: 0 0 12px #00D2FF !important;
+      width: 0% !important;
+      z-index: 10 !important;
+      transition: width 0.05s linear !important;
+    }
+
+    .simulator-glass-reflection {
+      position: absolute !important;
+      inset: 0 !important;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%) !important;
+      pointer-events: none !important;
+      z-index: 5 !important;
+    }
+  </style>
 
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -196,19 +283,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://artemax.net.br">
-                  <div class="simulator-scaler">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://artemax.net.br" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
+                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection">
-                      <div class="simulator-progress-line"></div>
-                      <div class="simulator-glass-reflection"></div>
-                      <div class="simulator-screen-content">
-                        <img src="assets/screencapture-artemax-net-br-2026-10-21-15_48_45.png" alt="Simulação do site Artemax">
+                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
+                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
+                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
+                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
+                        <img src="assets/screencapture-artemax-net-br-2026-10-21-15_48_45.png" alt="Simulação do site Artemax" style="width: 100%; height: auto; display: block;">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Artemax">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Artemax" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
                   </div>
                 </div>
               </div>
@@ -285,19 +372,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://psicologaemsinop.com">
-                  <div class="simulator-scaler">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://psicologaemsinop.com" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
+                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection">
-                      <div class="simulator-progress-line"></div>
-                      <div class="simulator-glass-reflection"></div>
-                      <div class="simulator-screen-content">
-                        <img src="assets/screencapture-psicologaemsinop-2026-10-21-15_44_53.png" alt="Simulação do site de Vanessa Moura">
+                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
+                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
+                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
+                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
+                        <img src="assets/screencapture-psicologaemsinop-2026-10-21-15_44_53.png" alt="Simulação do site de Vanessa Moura" style="width: 100%; height: auto; display: block;">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
                   </div>
                 </div>
               </div>
@@ -335,7 +422,7 @@
             </div>
           </article>
 
-          <!-- CASE 3: AJA Amazônia -->
+          <!-- CASE 3: AJA - Aliança Jurídica pela Amazônia -->
           <article class="simulator-card rounded-3xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all duration-300 flex flex-col justify-between overflow-hidden group hover:shadow-[0_12px_40px_rgba(0,210,255,0.12)]" data-url="https://ajamazonia.org">
             <div>
               <!-- Vitrine do Mockup Interativo -->
@@ -374,19 +461,19 @@
                 </div>
 
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org">
-                  <div class="simulator-scaler">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org" style="position: relative; width: 100%; aspect-ratio: 768 / 612; background: #101419; overflow: hidden;">
+                  <div class="simulator-scaler" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; transform-origin: 0 0;">
                     <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection">
-                      <div class="simulator-progress-line"></div>
-                      <div class="simulator-glass-reflection"></div>
-                      <div class="simulator-screen-content">
-                        <img src="assets/screencapture-ajamazonia-org-2026-10-21-15_48_04.png" alt="Simulação do site AJA Amazônia">
+                    <div class="simulator-screen-projection" style="position: absolute; top: 0; left: 0; width: 1920px; height: 1200px; transform-origin: 0 0; transform: matrix3d(0.338329, 0.054485, 0, 0.000102, 0.005299, 0.313124, 0, -0.000024, 0, 0, 1, 0, 119, 46, 0, 1); overflow: hidden; background: #000000; pointer-events: none;">
+                      <div class="simulator-progress-line" style="position: absolute; top: 0; left: 0; height: 6px; width: 0%; z-index: 10; background: linear-gradient(90deg, #00D2FF, #0066FF);"></div>
+                      <div class="simulator-glass-reflection" style="position: absolute; inset: 0; pointer-events: none; z-index: 5; background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%);"></div>
+                      <div class="simulator-screen-content" style="position: absolute; top: 0; left: 0; width: 100%;">
+                        <img src="assets/screencapture-ajamazonia-org-2026-10-21-15_48_04.png" alt="Simulação do site Aliança Jurídica pela Amazônia" style="width: 100%; height: auto; display: block;">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup AJA Amazônia">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Aliança Jurídica pela Amazônia" style="position: absolute; top: 0; left: 0; width: 768px; height: 612px; pointer-events: none; z-index: 20;">
                   </div>
                 </div>
               </div>
@@ -394,10 +481,10 @@
               <!-- Conteúdo Descritivo -->
               <div class="p-6 sm:p-8">
                 <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">
-                  AJA — Articulação Justiça Amazônica
+                  AJA — Aliança Jurídica pela Amazônia
                 </h3>
                 <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
-                  Estruturação de portal internacional institucional voltado ao fortalecimento do Estado de Direito, governança socioambiental e combate ao desmatamento.
+                  Rede jurídica diversa e representativa que conecta advogados, pesquisadores, organizações da sociedade civil, clínicas de direito e coletivos de base para potencializar a justiça socioambiental, povos e territórios.
                 </p>
 
                 <!-- Destaques Rápidos -->
@@ -463,21 +550,21 @@
             </a>
           </div>
 
-          <!-- Card 2: Desenvolvimento Web -->
+          <!-- Card 2: Otimização Google Maps / Google Meu Negócio -->
           <div
             class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
             <div>
               <div
                 class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
-                <span class="material-symbols-outlined text-2xl">code</span>
+                <span class="material-symbols-outlined text-2xl">pin_drop</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Desenvolvimento Web</h3>
-              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Sites institucionais e sistemas personalizados, rápidos e 100% adaptados para celulares, transmitindo autoridade e seriedade para a sua marca.</p>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Otimização de Perfil no Google Maps (Google Meu Negócio)</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Mais ligações, mensagens e clientes na sua porta. Deixamos seu perfil no Google Maps 100% completo, profissional e bem posicionado para sua empresa ser a primeira escolha de quem busca pelo seu serviço na região.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
-              href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Desenvolvimento%20Web."
+              href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Google%20Meu%20Neg%C3%B3cio."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Criação de Sites
+              Falar sobre Google Maps
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
@@ -539,21 +626,21 @@
             </a>
           </div>
 
-          <!-- Card 6: Modelagem Técnica 3D -->
+          <!-- Card 6: Desenvolvimento Web -->
           <div
             class="p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group">
             <div>
               <div
                 class="w-12 h-12 rounded-xl bg-electric-cyan/10 text-electric-cyan flex items-center justify-center mb-6 group-hover:bg-electric-cyan group-hover:text-surface-root transition-colors">
-                <span class="material-symbols-outlined text-2xl">view_in_ar</span>
+                <span class="material-symbols-outlined text-2xl">code</span>
               </div>
-              <h3 class="text-xl font-bold text-text-primary mb-3">Modelagem Técnica em 3D</h3>
-              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Desenhos técnicos e renderizações realistas de peças e equipamentos (Solidworks), ideais para apresentação de protótipos industriais.</p>
+              <h3 class="text-xl font-bold text-text-primary mb-3">Desenvolvimento Web</h3>
+              <p class="text-sm text-text-muted leading-relaxed mb-6 font-light">Sites institucionais e sistemas personalizados, rápidos e 100% adaptados para celulares, transmitindo autoridade e seriedade para a sua marca.</p>
             </div>
             <a class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold text-electric-cyan hover:underline tracking-wider uppercase pt-4 border-t border-surface-border/60"
-              href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Solidworks."
+              href="https://wa.me/5561994003108?text=Ol%C3%A1!%20Gostaria%20de%20falar%20sobre%20Desenvolvimento%20Web."
               rel="noopener noreferrer" target="_blank">
-              Falar sobre Modelagem 3D
+              Falar sobre Criação de Sites
               <span class="material-symbols-outlined text-sm">arrow_forward</span>
             </a>
           </div>
@@ -638,11 +725,11 @@
                     id="servico" required="">
                     <option disabled="" selected="" value="">Selecione o serviço principal</option>
                     <option value="Gestão de tráfego pago">Gestão de tráfego pago (Anúncios online)</option>
-                    <option value="Desenvolvimento web">Desenvolvimento de sites ou sistemas</option>
+                    <option value="Google Meu Negócio">Otimização no Google Maps (Google Meu Negócio)</option>
                     <option value="Criação de landing page">Criação de página de vendas (Landing page)</option>
                     <option value="Edição de material em vídeo ou audio">Edição de vídeos para redes sociais</option>
                     <option value="Manutenção e Otimização de sites">Manutenção e suporte para sites</option>
-                    <option value="Desenho em Solidworks">Desenho técnico 3D (Solidworks)</option>
+                    <option value="Desenvolvimento web">Desenvolvimento de sites ou sistemas</option>
                     <option value="Outro">Outro</option>
                   </select>
                 </div>
@@ -710,6 +797,7 @@
             }
           }
           window.addEventListener('resize', updateScale);
+          window.addEventListener('load', updateScale);
           if (window.ResizeObserver) {
             new ResizeObserver(updateScale).observe(stage);
           }
@@ -730,6 +818,7 @@
               maxScroll = img.naturalHeight - 1200;
               autoScrollSpeed = Math.max(4.5, Math.min(8.5, maxScroll / 750));
             }
+            updateScale();
           }
 
           if (img.complete && img.naturalHeight) {
@@ -740,6 +829,11 @@
 
           // Loop de renderização 60fps/120fps via requestAnimationFrame
           function tick() {
+            // Garante que a escala esteja sempre ativa
+            if (!scaler.style.transform && stage.clientWidth > 0) {
+              updateScale();
+            }
+
             if (isHovered && !userInteracted && !isLooping) {
               targetY += autoScrollSpeed;
               if (targetY >= maxScroll) {

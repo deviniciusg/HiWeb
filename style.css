@@ -1,36 +1,15 @@
 /* Base Styles */
-@layer base {
-  html, body {
-    margin: 0;
-    padding: 0;
-    background-color: #0A0E13;
-    color: #F8FAFC;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #0A0E13;
+  color: #F8FAFC;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 ::selection {
   background-color: #00D2FF;
   color: #0A0E13;
-}
-
-/* Tailwind Customizations via CSS for better readability */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all;
-  }
-  
-  .card-base {
-    @apply p-8 rounded-2xl bg-surface-card border border-surface-border hover:border-electric-cyan/60 transition-all flex flex-col justify-between group;
-  }
-
-  .nav-link {
-    @apply hover:text-electric-cyan transition-colors;
-  }
 }
 
 /* ========================================== */
