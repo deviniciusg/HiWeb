@@ -475,8 +475,11 @@ header.site-header.scrolled {
   aspect-ratio: 768 / 612 !important;
   background: #101419 !important;
   overflow: hidden !important;
-  cursor: pointer !important;
   user-select: none !important;
+}
+
+.simulator-stage[data-target-url] {
+  cursor: pointer !important;
 }
 
 .simulator-scaler {
@@ -497,10 +500,10 @@ header.site-header.scrolled {
   height: 1200px !important;
   transform-origin: 0 0 !important;
   transform: matrix3d(
-    0.338329, 0.054485, 0, 0.000102,
-    0.005299, 0.313124, 0, -0.000024,
+    0.217415, -0.045562, 0, -0.000085,
+    -0.019845, 0.261844, 0, -0.000020,
     0, 0, 1, 0,
-    119, 46, 0, 1
+    125.278833, 125.945946, 0, 1
   ) !important;
   overflow: hidden !important;
   background: #000000 !important;
@@ -529,6 +532,8 @@ header.site-header.scrolled {
   height: 612px !important;
   pointer-events: none !important;
   z-index: 20 !important;
+  transform: scaleX(-1) !important;
+  transform-origin: 384px 306px !important;
 }
 
 .simulator-progress-line {
@@ -546,7 +551,7 @@ header.site-header.scrolled {
 .simulator-glass-reflection {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%) !important;
+  background: linear-gradient(225deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 40%, transparent 60%) !important;
   pointer-events: none !important;
   z-index: 5 !important;
 }

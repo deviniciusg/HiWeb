@@ -89,38 +89,152 @@
     <!-- ========================================== -->
     <!-- 2. HERO SECTION                           -->
     <!-- ========================================== -->
-    <section class="relative flex items-center justify-center py-24 md:py-32 px-6 overflow-hidden" id="inicio">
+    <section class="relative flex items-center justify-center py-20 lg:py-28 px-6 overflow-hidden" id="inicio">
       <!-- Orbs de fundo com animação fluida -->
-      <div class="ambient-glow-orb-1 top-1/2 left-1/2"></div>
-      <div class="ambient-glow-orb-2 top-1/3 left-1/3"></div>
+      <div class="ambient-glow-orb-1 top-1/2 left-1/4"></div>
+      <div class="ambient-glow-orb-2 top-1/3 right-1/4"></div>
       <div class="absolute inset-0 bg-tech-grid pointer-events-none"></div>
 
-      <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
-        <!-- Tag / Pill com radar ativo -->
-        <div class="reveal-on-scroll mb-6">
-          <div class="hero-badge">
-            <span class="radar-beacon w-2 h-2 rounded-full bg-electric-cyan"></span>
-            <span class="text-xs font-mono font-semibold tracking-wider text-electric-cyan uppercase">Tecnologia &amp; Estratégia de Crescimento</span>
+      <div class="max-w-7xl mx-auto relative z-10 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          
+          <!-- Coluna Esquerda: Apresentação e Chamada para Ação -->
+          <div class="lg:col-span-6 flex flex-col items-start text-left">
+            <!-- Tag / Pill com radar ativo -->
+            <div class="reveal-on-scroll mb-6">
+              <div class="hero-badge">
+                <span class="radar-beacon w-2 h-2 rounded-full bg-electric-cyan"></span>
+                <span class="text-xs font-mono font-semibold tracking-wider text-electric-cyan uppercase">Tecnologia &amp; Estratégia de Crescimento</span>
+              </div>
+            </div>
+
+            <h1 class="reveal-on-scroll reveal-delay-1 text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.15]">
+              Impulsione seu negócio com uma <span class="animated-gradient-text">presença digital forte</span>.
+            </h1>
+
+            <p class="reveal-on-scroll reveal-delay-2 mt-6 text-base sm:text-lg text-text-muted max-w-xl font-light leading-relaxed">
+              Criamos sites modernos e anúncios estratégicos que colocam sua empresa na frente das pessoas certas — transformando visitas na internet em clientes reais para você.
+            </p>
+
+            <div class="reveal-on-scroll reveal-delay-3 mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
+              <a class="btn-shimmer btn-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all group" href="#contato">
+                <span>Quero Alavancar Meu Negócio</span>
+                <span class="material-symbols-outlined text-base transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
+              </a>
+              <a class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-surface-border bg-surface-card/60 backdrop-blur text-text-primary hover:border-electric-cyan/70 hover:text-electric-cyan font-semibold text-sm tracking-wider uppercase transition-all hover:scale-105" href="#clientes">
+                <span class="material-symbols-outlined text-base">visibility</span>
+                <span>Ver outros projetos reais</span>
+              </a>
+            </div>
+
+            <!-- Destaques Rápidos de Confiança -->
+            <div class="reveal-on-scroll reveal-delay-4 mt-10 pt-6 border-t border-surface-border/60 flex flex-wrap items-center gap-6 text-xs font-mono text-text-muted">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-electric-cyan text-base">verified</span>
+                <span>Sites de Alta Performance</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-electric-cyan text-base">trending_up</span>
+                <span>Foco em Conversão</span>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <h1 class="reveal-on-scroll reveal-delay-1 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-text-primary leading-[1.15]">
-          Impulsione seu negócio com uma <span class="animated-gradient-text">presença digital forte</span>.
-        </h1>
+          <!-- Coluna Direita: Mockup Interativo em Destaque da AJA -->
+          <div class="lg:col-span-6 w-full reveal-on-scroll reveal-delay-2">
+            <!-- Card de Destaque com Mockup Interativo -->
+            <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group shadow-2xl relative" data-url="https://ajamazonia.org">
+              <div>
+                <!-- Vitrine do Mockup Interativo -->
+                <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
+                  
+                  <!-- Tag flutuante de categoria -->
+                  <div class="absolute top-4 left-4 z-20 flex items-center gap-2">
+                    <span class="px-3.5 py-1.5 rounded-full bg-surface-root/80 backdrop-blur-md border border-surface-border text-[11px] font-mono font-semibold text-electric-cyan uppercase tracking-wider shadow-sm">
+                      Institucional & ESG
+                    </span>
+                    <span class="hidden sm:inline-block px-2.5 py-1 rounded-full bg-electric-cyan/15 border border-electric-cyan/40 text-[10px] font-mono font-bold text-electric-cyan uppercase tracking-wider">
+                      Case em Destaque
+                    </span>
+                  </div>
 
-        <p class="reveal-on-scroll reveal-delay-2 mt-8 text-base sm:text-xl text-text-muted max-w-2xl font-light leading-relaxed">
-          Criamos sites modernos e anúncios estratégicos que colocam sua empresa na frente das pessoas certas — transformando visitas na internet em clientes reais para você.
-        </p>
+                  <!-- Indicador de Status Interativo (Ao Vivo) -->
+                  <div class="absolute top-4 right-4 z-20">
+                    <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
+                      <span class="w-2 h-2 rounded-full bg-electric-cyan radar-beacon simulator-pulse"></span>
+                      <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
+                    </div>
+                  </div>
 
-        <div class="reveal-on-scroll reveal-delay-3 mt-10 flex flex-col sm:flex-row items-center gap-4">
-          <a class="btn-shimmer btn-pulse-glow inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-electric-cyan text-surface-root font-bold text-sm tracking-wider uppercase shadow-[0_4px_25px_rgba(0,210,255,0.35)] hover:bg-white hover:scale-105 transition-all group" href="#contato">
-            <span>Quero Alavancar Meu Negócio</span>
-            <span class="material-symbols-outlined text-base transition-transform duration-300 group-hover:translate-x-1">arrow_forward</span>
-          </a>
-          <a class="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full border border-surface-border bg-surface-card/60 backdrop-blur text-text-primary hover:border-electric-cyan/70 hover:text-electric-cyan font-semibold text-sm tracking-wider uppercase transition-all hover:scale-105" href="#clientes">
-            <span class="material-symbols-outlined text-base">visibility</span>
-            <span>Ver Projetos Reais</span>
-          </a>
+                  <!-- Dica Flutuante Inferior de Scroll -->
+                  <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
+                      <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
+                      <span>Role para navegar</span>
+                    </div>
+                  </div>
+
+                  <!-- Botão Direto para o Site -->
+                  <div class="absolute bottom-3 right-3 z-20">
+                    <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
+                       href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank" title="Acessar o site ajamazonia.org">
+                      <span>Ver Site</span>
+                      <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
+                    </a>
+                  </div>
+
+                  <!-- Palco do Mockup -->
+                  <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org">
+                    <div class="simulator-scaler">
+                      <!-- Projeção 3D da tela do Monitor -->
+                      <div class="simulator-screen-projection">
+                        <div class="simulator-progress-line"></div>
+                        <div class="simulator-glass-reflection"></div>
+                        <div class="simulator-screen-content">
+                          <img src="assets/screencapture-ajamazonia-org-2026-11-06-11_44_21.png" alt="Simulação do site Aliança Jurídica pela Amazônia">
+                        </div>
+                      </div>
+
+                      <!-- Carcaça do Monitor (Overlay) -->
+                      <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Aliança Jurídica pela Amazônia">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Conteúdo Descritivo -->
+                <div class="p-6 sm:p-8">
+                  <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">
+                    AJA — Aliança Jurídica pela Amazônia
+                  </h3>
+                  <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
+                    Rede jurídica diversa e representativa que conecta advogados, pesquisadores, organizações da sociedade civil, clínicas de direito e coletivos de base para potencializar a justiça socioambiental, povos e territórios.
+                  </p>
+
+                  <!-- Destaques Rápidos -->
+                  <div class="grid grid-cols-2 gap-3 pt-5 border-t border-surface-border/60">
+                    <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
+                      <span class="block text-[11px] font-mono text-text-muted uppercase">Entrega</span>
+                      <span class="text-xs font-semibold text-text-primary">Portal de postagens</span>
+                    </div>
+                    <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
+                      <span class="block text-[11px] font-mono text-text-muted uppercase">Objetivo</span>
+                      <span class="text-xs font-semibold text-text-primary">Autoridade Global</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Rodapé do Card com Link -->
+              <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
+                <a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-border/60 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors"
+                  href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank">
+                  <span>ajamazonia.org</span>
+                  <span class="material-symbols-outlined text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">north_east</span>
+                </a>
+              </div>
+            </article>
+          </div>
+
         </div>
       </div>
     </section>
@@ -172,99 +286,10 @@
         </div>
 
         <!-- Grid de Cases no Desktop com Mockup Inteiro (Sem Cortes) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           
-          <!-- CASE 1: AJA - Aliança Jurídica pela Amazônia -->
-          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-1" data-url="https://ajamazonia.org">
-            <div>
-              <!-- Vitrine do Mockup Interativo -->
-              <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
-                
-                <!-- Tag flutuante de categoria -->
-                <div class="absolute top-4 left-4 z-20">
-                  <span class="px-3.5 py-1.5 rounded-full bg-surface-root/80 backdrop-blur-md border border-surface-border text-[11px] font-mono font-semibold text-electric-cyan uppercase tracking-wider shadow-sm">
-                    Institucional & ESG
-                  </span>
-                </div>
-
-                <!-- Indicador de Status Interativo (Ao Vivo) -->
-                <div class="absolute top-4 right-4 z-20">
-                  <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-root/90 backdrop-blur-md border border-surface-border text-[11px] font-mono font-medium text-text-muted transition-colors group-hover:border-electric-cyan/40 shadow-sm">
-                    <span class="w-2 h-2 rounded-full bg-electric-cyan radar-beacon simulator-pulse"></span>
-                    <span class="simulator-status-text transition-colors">Passe o mouse ou role</span>
-                  </div>
-                </div>
-
-                <!-- Dica Flutuante Inferior de Scroll -->
-                <div class="absolute bottom-3 left-3 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-root/85 backdrop-blur-md border border-surface-border/80 text-[10px] font-mono text-text-muted">
-                    <span class="material-symbols-outlined text-xs text-electric-cyan animate-bounce">mouse</span>
-                    <span>Role para navegar</span>
-                  </div>
-                </div>
-
-                <!-- Botão Direto para o Site -->
-                <div class="absolute bottom-3 right-3 z-20">
-                  <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
-                     href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank" title="Acessar o site ajamazonia.org">
-                    <span>Ver Site</span>
-                    <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
-                  </a>
-                </div>
-
-                <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://ajamazonia.org">
-                  <div class="simulator-scaler">
-                    <!-- Projeção 3D da tela do Monitor -->
-                    <div class="simulator-screen-projection">
-                      <div class="simulator-progress-line"></div>
-                      <div class="simulator-glass-reflection"></div>
-                      <div class="simulator-screen-content">
-                        <img src="assets/screencapture-ajamazonia-org-2026-11-06-11_44_21.png" alt="Simulação do site Aliança Jurídica pela Amazônia">
-                      </div>
-                    </div>
-
-                    <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Aliança Jurídica pela Amazônia">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Conteúdo Descritivo -->
-              <div class="p-6 sm:p-8">
-                <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">
-                  AJA — Aliança Jurídica pela Amazônia
-                </h3>
-                <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
-                  Rede jurídica diversa e representativa que conecta advogados, pesquisadores, organizações da sociedade civil, clínicas de direito e coletivos de base para potencializar a justiça socioambiental, povos e territórios.
-                </p>
-
-                <!-- Destaques Rápidos -->
-                <div class="grid grid-cols-2 gap-3 pt-5 border-t border-surface-border/60">
-                  <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
-                    <span class="block text-[11px] font-mono text-text-muted uppercase">Entrega</span>
-                    <span class="text-xs font-semibold text-text-primary">Portal & Web</span>
-                  </div>
-                  <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
-                    <span class="block text-[11px] font-mono text-text-muted uppercase">Objetivo</span>
-                    <span class="text-xs font-semibold text-text-primary">Autoridade Global</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Rodapé do Card com Link -->
-            <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
-              <a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-border/60 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors"
-                href="https://ajamazonia.org" rel="noopener noreferrer" target="_blank">
-                <span>ajamazonia.org</span>
-                <span class="material-symbols-outlined text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">north_east</span>
-              </a>
-            </div>
-          </article>
-          
-          <!-- CASE 2: Artemax -->
-          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-2" data-url="https://artemax.net.br">
+          <!-- CASE 1: Artemax -->
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-1" data-url="https://artemax.net.br">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -325,18 +350,18 @@
                   Artemax Ferramentas
                 </h3>
                 <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
-                  Estruturação de catálogo industrial online e presença digital corporativa para soluções de usinagem (PCD e Metal Duro), focada em orçamentos comerciais diretos.
+                  Estruturação de catálogo industrial online, presença digital corporativa e gestão contínua de tráfego pago para soluções de usinagem (PCD e Metal Duro), com foco estratégico na captação de clientes e aumento de vendas.
                 </p>
 
                 <!-- Destaques Rápidos -->
                 <div class="grid grid-cols-2 gap-3 pt-5 border-t border-surface-border/60">
                   <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
                     <span class="block text-[11px] font-mono text-text-muted uppercase">Entrega</span>
-                    <span class="text-xs font-semibold text-text-primary">Catálogo & Web</span>
+                    <span class="text-xs font-semibold text-text-primary">Site & Tráfego Pago</span>
                   </div>
                   <div class="p-3 rounded-xl bg-surface-subtle/60 border border-surface-border/40">
                     <span class="block text-[11px] font-mono text-text-muted uppercase">Objetivo</span>
-                    <span class="text-xs font-semibold text-text-primary">Orçamento B2B</span>
+                    <span class="text-xs font-semibold text-text-primary">Aumento de Vendas</span>
                   </div>
                 </div>
               </div>
@@ -352,8 +377,8 @@
             </div>
           </article>
 
-          <!-- CASE 3: Vanessa Moura -->
-          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-3" data-url="https://psicologaemsinop.com">
+          <!-- CASE 2: Psicologia & Docência -->
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-2" data-url="https://psicologaemsinop.com">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -398,12 +423,12 @@
                       <div class="simulator-progress-line"></div>
                       <div class="simulator-glass-reflection"></div>
                       <div class="simulator-screen-content">
-                        <img src="assets/screencapture-psicologaemsinop.png" alt="Simulação do site de Vanessa Thaís de Moura">
+                        <img src="assets/screencapture-psicologaemsinop.png" alt="Simulação do site de Psicologia & Docência">
                       </div>
                     </div>
 
                     <!-- Carcaça do Monitor (Overlay) -->
-                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Vanessa Moura">
+                    <img src="assets/mockup_no_website.png" class="simulator-mockup-frame" alt="Monitor Mockup Psicologia & Docência">
                   </div>
                 </div>
               </div>
@@ -411,7 +436,7 @@
               <!-- Conteúdo Descritivo -->
               <div class="p-6 sm:p-8">
                 <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-electric-cyan transition-colors">
-                  Vanessa Thaís de Moura — Psicologia & Docência
+                  Psicologia & Docência
                 </h3>
                 <p class="text-sm text-text-muted leading-relaxed font-light mb-6">
                   Portal institucional e acadêmico desenvolvido para consolidar a autoridade profissional da psicóloga e docente universitária, reunindo biografia executiva, atuação no ensino superior, eixos de pesquisa e canais para bancas acadêmicas e consultorias.
@@ -441,8 +466,8 @@
             </div>
           </article>
 
-          <!-- CASE 4: Allp Fit -->
-          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-4" data-url="https://allpfit.com.br">
+          <!-- CASE 3: Allp Fit -->
+          <article class="simulator-card spotlight-card rounded-3xl bg-surface-card border border-surface-border flex flex-col justify-between overflow-hidden group reveal-on-scroll reveal-delay-3">
             <div>
               <!-- Vitrine do Mockup Interativo -->
               <div class="relative w-full aspect-[16/10] sm:aspect-[16/9] bg-surface-subtle/80 flex items-center justify-center p-3 sm:p-6 border-b border-surface-border/60">
@@ -470,17 +495,8 @@
                   </div>
                 </div>
 
-                <!-- Botão Direto para o Site -->
-                <div class="absolute bottom-3 right-3 z-20">
-                  <a class="btn-shimmer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-electric-cyan text-surface-root font-mono font-bold text-[11px] uppercase tracking-wider shadow-[0_4px_15px_rgba(0,210,255,0.4)] hover:bg-white hover:scale-105 transition-all group/btn"
-                     href="https://allpfit.com.br" rel="noopener noreferrer" target="_blank" title="Acessar o site allpfit.com.br">
-                    <span>Ver Site</span>
-                    <span class="material-symbols-outlined text-sm font-bold transition-transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5">north_east</span>
-                  </a>
-                </div>
-
                 <!-- Palco do Mockup -->
-                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl cursor-pointer" data-target-url="https://allpfit.com.br">
+                <div class="simulator-stage rounded-xl overflow-hidden shadow-2xl">
                   <div class="simulator-scaler">
                     <!-- Projeção 3D da tela do Monitor -->
                     <div class="simulator-screen-projection">
@@ -518,15 +534,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Rodapé do Card com Link -->
-            <div class="px-6 sm:px-8 pb-6 sm:pb-8 pt-0">
-              <a class="inline-flex items-center justify-between w-full pt-4 border-t border-surface-border/60 text-xs font-mono font-semibold text-text-muted group-hover:text-electric-cyan transition-colors"
-                href="https://allpfit.com.br" rel="noopener noreferrer" target="_blank">
-                <span>allpfit.com.br</span>
-                <span class="material-symbols-outlined text-base group-hover:translate-x-1 group-hover:-translate-y-0.5 transition-transform">north_east</span>
-              </a>
             </div>
           </article>
 
